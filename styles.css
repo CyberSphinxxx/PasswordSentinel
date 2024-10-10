@@ -13,7 +13,7 @@ body {
     border-radius: 10px;
 }
 
-.password_container {
+.password-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
