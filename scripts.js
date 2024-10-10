@@ -1,0 +1,3 @@
+function updateLenght() {
+    lenghtValue.textContent = 
+}

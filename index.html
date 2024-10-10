@@ -7,7 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+    <div class="container">
+        <h1>Generate Your Password</h1>
+
+        <div class="password_container">
+            <input type="text" id="password" readonly>
+            <button id="generateBtn"> Generate Password</button>
+        </div>
+
+        <div class="controls">
+            <label>Password Lenght:
+                <input type="range" id="lenghtSlider" min="6" max="30" value="12" oninput="">
+                <span id="lenghtValue">9090909</span>
+            </label>
+
+            <div class="checkboxes">
+                <label><input type="checkbox" id="includeUppercase" checked>Uppercase</label>
+                <label><input type="checkbox" id="includeLowecase" checked>Lowercase</label>
+                <label><input type="checkbox" id="includeNumbers" checked>Numbers</label>
+                <label><input type="checkbox" id="includeSymbols" checked>Symbols</label>
+            </div>
+        </div>
+
+        <div class="strength-indicator" id="strengthIndicator">
+            Password Strength: (indicator here)
+        </div>
+
+    </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>
