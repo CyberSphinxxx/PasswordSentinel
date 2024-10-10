@@ -1,22 +1,23 @@
 const passwordField     = document.getElementById('password');
 const generateBtn       = document.getElementById('generateBtn');
 const lengthSlider      = document.getElementById('lengthSlider');
-const lenghtValue       = document.getElementById('lenghtValue');
-const strengthIndicator = document.getElementById('strength-indicator');
+const lengthValue       = document.getElementById('lengthValue');
+const strengthIndicator = document.getElementById('strengthIndicator');
+const strengthImage     = document.getElementById('strengthImage');
 
 const includeUppercase  = document.getElementById('includeUppercase');
-const includeLowercase   = document.getElementById('includeLowecase');
+const includeLowercase  = document.getElementById('includeLowercase');
 const includeNumbers    = document.getElementById('includeNumbers');
 const includeSymbols    = document.getElementById('includeSymbols');
 
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
-const SYMBOLS = '!@#$%^&*()_-=+{}[];:<>,.?/';
+const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
 
 generateBtn.addEventListener('click', generatePassword);
 
-function generatePassword(){
+function generatePassword() {
     let length = parseInt(lengthSlider.value);
     let charSet = '';
     if (includeUppercase.checked) charSet += UPPERCASE;
@@ -34,7 +35,7 @@ function generatePassword(){
 }
 
 function updateLength() {
-    lenghtValue.textContent = lengthSlider.value;
+    lengthValue.textContent = lengthSlider.value;
 }
 
 function evaluateStrength(password) {
@@ -45,18 +46,18 @@ function evaluateStrength(password) {
     if (/\d/.test(password)) strength++;
     if (/[^A-Za-z0-9]/.test(password)) strength++;
 
-    if (strength <= 2){
-        strengthIndicator.textContent = 'Password Strength: weak';
-        strengthImage.src = 'weak.jpg';
+    if (strength <= 2) {
+        strengthIndicator.textContent = 'Password Strength: Weak';
+        strengthImage.src = 'weak.png'; // Add different images for different strengths
     }
-
-    else if (strength === 3 || strength === 4){
-        strengthIndicator.textContent = 'Password Strength: medium';
-        strengthImage.src = 'medium.jpg';
+    
+    else if (strength === 3 || strength === 4) {
+        strengthIndicator.textContent = 'Password Strength: Medium';
+        strengthImage.src = 'medium.png';
     }
-
+    
     else {
         strengthIndicator.textContent = 'Password Strength: Strong';
-        strengthImage.src = 'strong.jpg';
+        strengthImage.src = 'strong.png';
     }
 }
