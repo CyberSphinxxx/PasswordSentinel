@@ -1,5 +1,7 @@
 body {
     background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .container {
@@ -28,4 +30,17 @@ body {
     width: 75%;
     padding: 10px;
     font-size: 10px;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+.checkboxes {
+    margin-top: 10px;
+}
+
+.strength-indicator {
+    font-weight: bold;
+    margin-top: 20px;
 }
