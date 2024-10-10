@@ -31,3 +31,8 @@ To get started with **PasswordSentinel**, follow these steps:
    ```
 3. Open `index.html` in your preferred web browser.
 
+## Usage
+- **Adjust Password Length:** Use the slider to choose a password length between 6 and 30 characters.
+- **Select Character Types:** Check the boxes to include uppercase, lowercase, numbers, or symbols in the password.
+- **Generate Password:** Click the "Generate Password" button to create a secure password.
+- **View Password Strength:** Check the password strength and observe the corresponding strength image.
