@@ -12,8 +12,8 @@ const includeSymbols    = document.getElementById('includeSymbols');
 
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
-const NUMBERS = '0123456789';
-const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+const NUMBERS   = '0123456789';
+const SYMBOLS   = '!@#$%^&*()_+-=[]{}|;:,.<>?';
 
 generateBtn.addEventListener('click', generatePassword);
 
@@ -48,16 +48,16 @@ function evaluateStrength(password) {
 
     if (strength <= 2) {
         strengthIndicator.textContent = 'Password Strength: Weak';
-        strengthImage.src = 'weak.png'; // Add different images for different strengths
+        strengthImage.src = 'images/weak.png';
     }
     
     else if (strength === 3 || strength === 4) {
         strengthIndicator.textContent = 'Password Strength: Medium';
-        strengthImage.src = 'medium.png';
+        strengthImage.src = 'images/medium.png';
     }
     
     else {
         strengthIndicator.textContent = 'Password Strength: Strong';
-        strengthImage.src = 'strong.png';
+        strengthImage.src = 'images/strong.png';
     }
 }
