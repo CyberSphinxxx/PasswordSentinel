@@ -17,3 +17,17 @@ Here’s a preview of PasswordSentinel:
 
 ![Opera Snapshot_2024-10-11_030901_127 0 0 1](https://github.com/user-attachments/assets/02c33967-af0a-431f-9b24-0bf019af8ceb)
 
+## Getting Started
+
+To get started with **PasswordSentinel**, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/PasswordSentinel.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd PasswordSentinel
+   ```
+3. Open `index.html` in your preferred web browser.
+
