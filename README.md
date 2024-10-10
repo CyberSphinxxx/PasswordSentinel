@@ -36,3 +36,6 @@ To get started with **PasswordSentinel**, follow these steps:
 - **Select Character Types:** Check the boxes to include uppercase, lowercase, numbers, or symbols in the password.
 - **Generate Password:** Click the "Generate Password" button to create a secure password.
 - **View Password Strength:** Check the password strength and observe the corresponding strength image.
+
+## Contributing
+Contributions are welcome! If you have suggestions or would like to improve this project, feel free to submit a pull request or open an issue.
