@@ -48,16 +48,16 @@ function evaluateStrength(password) {
 
     if (strength <= 2) {
         strengthIndicator.textContent = 'Password Strength: Weak';
-        strengthImage.src = 'weak.png'; // Add different images for different strengths
+        strengthImage.src = 'weak.jpg'; // Add different images for different strengths
     }
     
     else if (strength === 3 || strength === 4) {
         strengthIndicator.textContent = 'Password Strength: Medium';
-        strengthImage.src = 'medium.png';
+        strengthImage.src = 'medium.jpg';
     }
     
     else {
         strengthIndicator.textContent = 'Password Strength: Strong';
-        strengthImage.src = 'strong.png';
+        strengthImage.src = 'strong.jpg';
     }
 }

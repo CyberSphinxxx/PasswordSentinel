@@ -49,3 +49,9 @@ body {
     font-weight: bold;
     margin-top: 20px;
 }
+
+#strengthImage {
+    width: 150px;
+    height: auto;
+    margin-top: 20px;
+}
