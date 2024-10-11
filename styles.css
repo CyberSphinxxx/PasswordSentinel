@@ -1,18 +1,21 @@
 body {
     background-color: rgb(4, 4, 4);
-    font-family: 'PT Serif';
+    font-family: 'PT Serif', serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 #projectName {
-    text-align: left;
+    text-align: center;
     color: rgb(255, 255, 255);
-    margin-left: 10px ;
+    margin-left: 10px;
 }
 
 .container {
     background-color: rgb(255, 177, 8);
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     margin: 50px auto;
     padding: 20px;
     border: 3px solid;
@@ -27,15 +30,15 @@ body {
 }
 
 #password {
-    width: 75%;
+    width: 70%;
     padding: 10px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 #generateBtn {
-    width: 75%;
+    width: 100%;
     padding: 10px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .controls {
@@ -52,7 +55,24 @@ body {
 }
 
 #strengthImage {
-    width: 150px;
+    width: 100%;
+    max-width: 150px;
     height: auto;
     margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #password, #generateBtn {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .strength-indicator {
+        font-size: 14px;
+    }
 }
