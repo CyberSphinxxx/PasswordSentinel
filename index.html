@@ -14,14 +14,13 @@
         <h1>Generate Your Password</h1>
         <div class="password-container">
             <input type="text" id="password" readonly>
-            <button id="generateBtn">Generate Password</button>
+            <button id="copyBtn">Copy Password</button>
         </div>
 
         <div class="controls">
-            <label>Password length:
-                <input type="range" id="lengthSlider" min="6" max="30" value="12" oninput="updateLength()">
-                <span id="lengthValue">12</span>
-            </label>
+            <label for="passwordLength">Password length: </label>
+            <input type="range" id="passwordLength" min="6" max="30" value="12">
+            <span id="lengthValue">12</span>
 
             <div class="checkboxes">
                 <label><input type="checkbox" id="includeUppercase" checked> Uppercase</label>
