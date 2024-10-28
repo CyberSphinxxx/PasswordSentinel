@@ -9,7 +9,9 @@ body {
 .main-content {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
+    padding: 1.25rem;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Password Generator Container (Left Side) */
@@ -17,16 +19,16 @@ body {
     background-color: rgb(255, 177, 8);
     width: 90%;
     max-width: 400px;
-    padding: 20px;
-    border: 3px solid;
+    padding: 1.25rem;
     border-radius: 10px;
     text-align: center;
+    margin: 0; /* Remove margin for consistent alignment */
 }
 
 #projectName {
     color: rgb(255, 255, 255);
-    margin-bottom: 15px;
-    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Password Display and Copy Button */
@@ -34,65 +36,68 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
 }
 
 #password {
     width: 70%;
-    padding: 10px;
-    font-size: 14px;
+    padding: 0.625rem;
+    font-size: 1rem;
 }
 
 #copyBtn {
     width: 25%;
-    padding: 10px;
-    font-size: 14px;
+    padding: 0.625rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 
 .controls {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .checkboxes {
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .strength-indicator {
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 #strengthImage {
     width: 100%;
     max-width: 150px;
     height: auto;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
+/* FAQ Container (Right Side) */
 .description-container {
     background-color: rgb(255, 177, 8);
-    width: 750px;
-    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    padding: 1.25rem;
     border-radius: 10px;
     max-height: 500px;
     overflow-y: auto;
+    margin: 0;
 }
 
 .dropdown {
-    margin-bottom: 15px;
+    margin-bottom: 0.9375rem;
 }
 
 .dropdown-btn {
     width: 100%;
-    padding: 10px;
+    padding: 0.625rem;
     background-color: #000000;
     color: white;
     border: none;
     text-align: left;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 0 0;
 }
 
 .dropdown-btn.active {
@@ -102,12 +107,11 @@ body {
 .dropdown-content {
     display: none;
     background-color: #171717;
-    padding: 10px;
+    padding: 0.625rem;
     color: white;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 0 0 10px 10px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 600px) {
     .main-content {
         flex-direction: column;
@@ -116,5 +120,9 @@ body {
 
     .container, .description-container {
         width: 95%;
+    }
+
+    #projectName {
+        font-size: 1.25rem;
     }
 }
