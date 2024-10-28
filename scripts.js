@@ -106,63 +106,81 @@ window.onload = function() {
 const saveBtn = document.getElementById('saveBtn');
 const savedPasswordsList = document.getElementById('savedPasswordsList');
 const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('savedPassword'); // This is now the independent password input
+const passwordInput = document.getElementById('savedPassword');
 let isEditing = false;
 let currentEditEntry = null;
+let savedPasswords = JSON.parse(localStorage.getItem('savedPasswords')) || [];
 
-saveBtn.addEventListener('click', function() {
+// Function to render saved passwords
+function renderSavedPasswords() {
+    savedPasswordsList.innerHTML = '';
+    savedPasswords.forEach((entry, index) => {
+        const passwordEntry = document.createElement('div');
+        passwordEntry.classList.add('saved-password');
+
+        passwordEntry.innerHTML = `
+            <span>
+                <div class="email">Label: ${entry.email}</div>
+                <div class="password">Password: ${entry.password}</div>
+            </span>
+            <div class="button-container">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        `;
+
+        // Add edit functionality
+        passwordEntry.querySelector('.edit-btn').addEventListener('click', function () {
+            isEditing = true;
+            currentEditEntry = index;
+            emailInput.value = entry.email;
+            passwordInput.value = entry.password;
+            saveBtn.textContent = 'Update'; // Change button text to 'Update'
+        });
+
+        // Add delete functionality
+        passwordEntry.querySelector('.delete-btn').addEventListener('click', function () {
+            savedPasswords.splice(index, 1);
+            updateLocalStorage();
+            renderSavedPasswords();
+        });
+
+        savedPasswordsList.appendChild(passwordEntry);
+    });
+}
+
+// Function to update localStorage
+function updateLocalStorage() {
+    localStorage.setItem('savedPasswords', JSON.stringify(savedPasswords));
+}
+
+saveBtn.addEventListener('click', function () {
     const email = emailInput.value;
     const password = passwordInput.value; // Get the password from user input, not the generated password
 
     if (email && password) {
-        if (isEditing && currentEditEntry) {
+        if (isEditing) {
             // Update the existing entry if editing
-            currentEditEntry.querySelector('.email').textContent = `Label: ${email}`;
-            currentEditEntry.querySelector('.password').textContent = `Password: ${password}`;
+            savedPasswords[currentEditEntry] = { email, password };
             isEditing = false;
             currentEditEntry = null;
             saveBtn.textContent = 'Save'; // Change button back to 'Save'
-        } 
-        else {
-            // Create a new entry for saved password
-            const passwordEntry = document.createElement('div');
-            passwordEntry.classList.add('saved-password');
-            
-            passwordEntry.innerHTML = `
-                <span>
-                    <div class="email">Label: ${email}</div>
-                    <div class="password">Password: ${password}</div>
-                </span>
-                <div class="button-container">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            `;
-
-            // Add edit functionality
-            passwordEntry.querySelector('.edit-btn').addEventListener('click', function() {
-                isEditing = true;
-                currentEditEntry = passwordEntry;
-                emailInput.value = email;
-                passwordInput.value = password;
-                saveBtn.textContent = 'Update'; // Change button text to 'Update'
-            });
-
-            // Add delete functionality
-            passwordEntry.querySelector('.delete-btn').addEventListener('click', function() {
-                savedPasswordsList.removeChild(passwordEntry);
-            });
-
-            // Add the entry to the list
-            savedPasswordsList.appendChild(passwordEntry);
+        } else {
+            // Add a new password entry
+            savedPasswords.push({ email, password });
         }
+
+        // Update localStorage and re-render the list
+        updateLocalStorage();
+        renderSavedPasswords();
 
         // Clear input fields
         emailInput.value = '';
         passwordInput.value = '';
-        saveBtn.textContent = 'Save'; // Ensure button text is reset
-    } 
-    else {
+    } else {
         alert('Please enter both a label and a password.');
     }
 });
+
+// Initial render of saved passwords when the page loads
+document.addEventListener('DOMContentLoaded', renderSavedPasswords);
