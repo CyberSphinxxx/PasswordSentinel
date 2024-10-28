@@ -83,6 +83,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🗺️ Map
 ![36ab4c6c-210f-4e3d-8d85-7e15c6a16d59](https://github.com/user-attachments/assets/98ecc9c4-2299-405e-9372-826cfbfdb107)
 
+## Flowchart
+![PasswordSentinelFlowChart-2024-10-28-195803](https://github.com/user-attachments/assets/4ec28862-bf66-4464-9ed7-b196630ec09c)
+
 ---
 
 ⭐️ Star this repository if you find it helpful!
