@@ -57,6 +57,15 @@ function updateLength() {
     lengthValue.textContent = lengthSlider.value;
 }
 
+document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        let content = button.nextElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+
 // Function to evaluate the strength of the password and update the UI
 function evaluateStrength(password) {
     let strength = 0;

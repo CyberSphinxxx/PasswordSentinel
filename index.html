@@ -8,32 +8,59 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div class="container">
-        <h1 id="projectName">Password Sentinel</h1>
-        <h1>Generate Your Password</h1>
-        <div class="password-container">
-            <input type="text" id="password" readonly>
-            <button id="copyBtn">Copy</button>
-        </div>
-
-        <div class="controls">
-            <label for="passwordLength">Password length: </label>
-            <input type="range" id="passwordLength" min="6" max="30" value="12">
-            <span id="lengthValue">12</span>
-
-            <div class="checkboxes">
-                <label><input type="checkbox" id="includeUppercase" checked> Uppercase</label>
-                <label><input type="checkbox" id="includeLowercase" checked> Lowercase</label>
-                <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
-                <label><input type="checkbox" id="includeSymbols" checked> Symbols</label>
+    <div class="main-content">
+        <!-- Main Password Generator Container (Left Side) -->
+        <div class="container">
+            <h1 id="projectName">Password Sentinel</h1>
+            <h1>Generate Your Password</h1>
+            <div class="password-container">
+                <input type="text" id="password" readonly>
+                <button id="copyBtn">Copy</button>
             </div>
-
+            <div class="controls">
+                <label for="passwordLength">Password length: </label>
+                <input type="range" id="passwordLength" min="6" max="30" value="12">
+                <span id="lengthValue">12</span>
+                <div class="checkboxes">
+                    <label><input type="checkbox" id="includeUppercase" checked> Uppercase</label>
+                    <label><input type="checkbox" id="includeLowercase" checked> Lowercase</label>
+                    <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
+                    <label><input type="checkbox" id="includeSymbols" checked> Symbols</label>
+                </div>
+            </div>
+            <div class="strength-indicator" id="strengthIndicator">Password Strength: Weak</div>
+            <img id="strengthImage" src="weak.png" alt="Password Strength Image">
         </div>
-        <div class="strength-indicator" id="strengthIndicator">Password Strength: Weak</div>
-        <img id="strengthImage" src="weak.png" alt="Password Strength Image">
-    </div>
 
+        <!-- Description Dropdown Container (Right Side) -->
+        <div class="description-container">
+            <h2>About Strong Passwords</h2>
+            <div class="dropdown">
+                <button class="dropdown-btn">What makes a password strong?</button>
+                <div class="dropdown-content">
+                    <p>A strong password should be at least 12 characters long, include uppercase and lowercase letters, numbers, and symbols.</p>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn">Why should I use a password generator?</button>
+                <div class="dropdown-content">
+                    <p>Using a generator helps create complex passwords, which makes it harder for hackers to guess.</p>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn">Do I need a unique password for every account?</button>
+                <div class="dropdown-content">
+                    <p>Yes, using unique passwords for each account helps reduce the risk if one of your accounts is compromised.</p>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdown-btn">What are the requirements for a strong password?</button>
+                <div class="dropdown-content">
+                    <p>A strong password includes a mix of letters, numbers, and symbols and should avoid easily guessable patterns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,32 +1,40 @@
 body {
     background-color: rgb(4, 4, 4);
     font-family: 'PT Serif', serif;
-    text-align: center;
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
 }
 
-#projectName {
-    text-align: center;
-    color: rgb(255, 255, 255);
-    margin-left: 10px;
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
 }
 
+/* Password Generator Container (Left Side) */
 .container {
     background-color: rgb(255, 177, 8);
     width: 90%;
     max-width: 400px;
-    margin: 50px auto;
     padding: 20px;
     border: 3px solid;
     border-radius: 10px;
+    text-align: center;
 }
 
+#projectName {
+    color: rgb(255, 255, 255);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+/* Password Display and Copy Button */
 .password-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #password {
@@ -62,18 +70,51 @@ body {
     margin-top: 20px;
 }
 
+.description-container {
+    background-color: rgb(255, 177, 8);
+    width: 750px;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.dropdown {
+    margin-bottom: 15px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.dropdown-btn.active {
+    background-color: #000000;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #171717;
+    padding: 10px;
+    color: white;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 600px) {
-    .container {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container, .description-container {
         width: 95%;
-        padding: 15px;
-    }
-
-    #password, #generateBtn {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .strength-indicator {
-        font-size: 14px;
     }
 }
