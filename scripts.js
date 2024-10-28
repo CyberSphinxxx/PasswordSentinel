@@ -57,6 +57,7 @@ function updateLength() {
     lengthValue.textContent = lengthSlider.value;
 }
 
+// Event listener for the dropdown buttons (show/hide additional options)
 document.querySelectorAll('.dropdown-btn').forEach(button => {
     button.addEventListener('click', () => {
         button.classList.toggle('active');
@@ -64,7 +65,6 @@ document.querySelectorAll('.dropdown-btn').forEach(button => {
         content.style.display = content.style.display === 'block' ? 'none' : 'block';
     });
 });
-
 
 // Function to evaluate the strength of the password and update the UI
 function evaluateStrength(password) {
