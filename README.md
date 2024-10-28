@@ -39,3 +39,6 @@ To get started with **PasswordSentinel**, follow these steps:
 
 ## Contributing
 Contributions are welcome! If you have suggestions or would like to improve this project, feel free to submit a pull request or open an issue.
+
+## Map
+![36ab4c6c-210f-4e3d-8d85-7e15c6a16d59](https://github.com/user-attachments/assets/ed9dcaa9-c078-4700-94be-d3b65008d865)
