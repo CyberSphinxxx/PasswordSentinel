@@ -26,7 +26,7 @@ lengthSlider.addEventListener('input', function() {
 copyBtn.addEventListener('click', function() {
     passwordField.select();
     document.execCommand('copy');
-    alert('Password copied to clipboard!'); // Notification when password is copied
+    alert('Password copied to clipboard!'); // Notif when password is copied
 });
 
 // Function to generate random password
@@ -102,3 +102,67 @@ window.onload = function() {
     updateLength(); // Set initial length value
     generatePassword(); // Generate initial password
 };
+
+const saveBtn = document.getElementById('saveBtn');
+const savedPasswordsList = document.getElementById('savedPasswordsList');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('savedPassword'); // This is now the independent password input
+let isEditing = false;
+let currentEditEntry = null;
+
+saveBtn.addEventListener('click', function() {
+    const email = emailInput.value;
+    const password = passwordInput.value; // Get the password from user input, not the generated password
+
+    if (email && password) {
+        if (isEditing && currentEditEntry) {
+            // Update the existing entry if editing
+            currentEditEntry.querySelector('.email').textContent = `Label: ${email}`;
+            currentEditEntry.querySelector('.password').textContent = `Password: ${password}`;
+            isEditing = false;
+            currentEditEntry = null;
+            saveBtn.textContent = 'Save'; // Change button back to 'Save'
+        } 
+        else {
+            // Create a new entry for saved password
+            const passwordEntry = document.createElement('div');
+            passwordEntry.classList.add('saved-password');
+            
+            passwordEntry.innerHTML = `
+                <span>
+                    <div class="email">Label: ${email}</div>
+                    <div class="password">Password: ${password}</div>
+                </span>
+                <div class="button-container">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+            `;
+
+            // Add edit functionality
+            passwordEntry.querySelector('.edit-btn').addEventListener('click', function() {
+                isEditing = true;
+                currentEditEntry = passwordEntry;
+                emailInput.value = email;
+                passwordInput.value = password;
+                saveBtn.textContent = 'Update'; // Change button text to 'Update'
+            });
+
+            // Add delete functionality
+            passwordEntry.querySelector('.delete-btn').addEventListener('click', function() {
+                savedPasswordsList.removeChild(passwordEntry);
+            });
+
+            // Add the entry to the list
+            savedPasswordsList.appendChild(passwordEntry);
+        }
+
+        // Clear input fields
+        emailInput.value = '';
+        passwordInput.value = '';
+        saveBtn.textContent = 'Save'; // Ensure button text is reset
+    } 
+    else {
+        alert('Please enter both a label and a password.');
+    }
+});
