@@ -2,14 +2,23 @@
 
 ## Security Disclaimer
 
-PasswordSentinel is a demonstration project intended for educational purposes. While I do my best to implement secure practices, users should be aware that this is not intended to be a primary password management solution. For sensitive data, please use established, professionally audited password managers.
+PasswordSentinel is a demonstration project intended for educational purposes. While I do my best to implement modern security practices including AES-GCM encryption, users should be aware that this is not intended to be a primary password management solution. For sensitive data, please use established, professionally audited password managers.
+
+## Current Security Features
+
+- ✅ AES-GCM 256-bit encryption for stored passwords
+- ✅ Secure key generation using Web Crypto API
+- ✅ Protected local storage with encryption
+- ✅ Secure error handling for cryptographic operations
+- ✅ Modern password strength evaluation
 
 ## Known Limitations
 
-- Passwords are stored in browser local storage without encryption
-- Password generation uses JavaScript's Math.random()
-- No master password protection
+- Encryption key stored in browser local storage
+- No master password protection yet
 - Client-side only security implementation
+- Password generation uses Web Crypto API but could be further strengthened
+- No automatic session timeout
 
 ## Reporting a Vulnerability
 
@@ -44,16 +53,34 @@ When using PasswordSentinel, please follow these security guidelines:
 2. Regularly clear your browser's local storage
 3. Use a secure, up-to-date browser
 4. Be cautious when using on public or shared computers
+5. Enable your browser's security features
+6. Keep your operating system and browser updated
 
 ## Security Features Implementation Status
 
-- [ ] Encrypted local storage
-- [ ] Cryptographically secure random number generation
+- [x] Encrypted local storage using AES-GCM
 - [ ] Master password protection
+- [x] Secure key generation
 - [ ] Secure clipboard operations
 - [ ] Auto-clear clipboard
 - [ ] Session timeout
 - [ ] Export/import encryption
+- [x] Password strength evaluation
+- [x] Secure error handling
+
+## Technical Security Details
+
+### Encryption Implementation
+- Algorithm: AES-GCM (256-bit)
+- Key Generation: Web Crypto API
+- Storage: Encrypted data with IV in local storage
+- Error Handling: Graceful fallback with secure error messages
+
+### Password Generation
+- Character set customization
+- Minimum length enforcement
+- Strength evaluation algorithms
+- Visual strength indicators
 
 ## Third-Party Dependencies
 
@@ -61,6 +88,7 @@ Currently, PasswordSentinel uses minimal external dependencies:
 - HTML5
 - CSS3
 - Vanilla JavaScript
+- Web Crypto API (built-in browser feature)
 
 ## Updates to Security Policy
 
