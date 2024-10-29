@@ -1,4 +1,4 @@
-# 🔐 PasswordSentinel: Your Ultimate Password Generator & Manager
+# 🔐 PasswordSentinel: Password Generator & Manager
 
 ## 🖼️ Screenshots
 ![PasswordSentinel Interface](https://github.com/user-attachments/assets/02c33967-af0a-431f-9b24-0bf019af8ceb)
