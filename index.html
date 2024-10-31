@@ -3,146 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PasswordSentinel</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="header_styles.css">
+    <title>PasswordSentinel - Secure Password Generator & Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
-        <div class="header-container">
-            <div class="header-logo">
-                <a href="index.html">PasswordSentinel</a>
-            </div>
-            <nav class="header-nav">
-                <ul class="header-nav-menu">
-                    <li class="header-nav-item">
-                        <a href="#" class="header-nav-link">About</a>
-                        <div class="header-dropdown">
-                            <a href="/about/why-passwordsentinel.html" class="header-dropdown-item">Why PasswordSentinel</a>
-                            <a href="what-is-password-manager.html" class="header-dropdown-item">What is a Password Manager</a>
-                            <a href="features.html" class="header-dropdown-item">Features</a>
-                            <a href="security.html" class="header-dropdown-item">Security</a>
-                        </div>
-                    </li>
-                    <li class="header-nav-item">
-                        <a href="#" class="header-nav-link">Tools</a> 
-                        <!-- TBA -->
-                    </li>
-                    <li class="header-nav-item">
-                        <a href="#" class="header-nav-link">Github Repository</a>
-                        <!-- TBA -->
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="main-content">
-        <div class="container">
-            <h1 id="projectName">Password Sentinel</h1>
-            <h1>Generate Your Password</h1>
-            <div class="password-container">
-                <input type="text" id="password" readonly>
-                <button id="copyBtn">Copy</button>
-            </div>
-            <div class="controls">
-                <label for="passwordLength">Password length: </label>
-                <input type="range" id="passwordLength" min="6" max="30" value="12">
-                <span id="lengthValue">12</span>
-                <div class="checkboxes">
-                    <label><input type="checkbox" id="includeUppercase" checked> Uppercase</label>
-                    <label><input type="checkbox" id="includeLowercase" checked> Lowercase</label>
-                    <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
-                    <label><input type="checkbox" id="includeSymbols" checked> Symbols</label>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PasswordSentinel</h1>
+            <p>Your trusted companion for generating and managing secure passwords locally.</p>
+            <p>Protect your digital life with advanced encryption, intuitive tools, and the peace of mind that comes with complete privacy - your data never leaves your device.</p>
+            <a href="dashboard/dashboard.html" class="cta-button">Get Started</a>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Generation</h3>
+                    <p>Create strong, unique passwords instantly</p>
                 </div>
-            </div>
-            <div class="strength-indicator" id="strengthIndicator">Password Strength: Weak</div>
-            <img id="strengthImage" src="weak.png" alt="Password Strength Image">
-        </div>
-
-        <!-- Description Dropdown Container (Right Side) -->
-        <div class="description-container">
-            <h2 id="faq_title">Frequently Asked Questions About Passwords</h2>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">What makes a password strong?</button>
-                <div class="dropdown-content">
-                    <p>A strong password should be at least 12 characters long, include uppercase and lowercase letters, numbers, and symbols.</p>
+                <div class="feature">
+                    <div class="feature-icon">💼</div>
+                    <h3>Easy Management</h3>
+                    <p>Store and organize your passwords safely</p>
                 </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">Why should I use a password generator?</button>
-                <div class="dropdown-content">
-                    <p>Using a generator helps create complex passwords, which makes it harder for hackers to guess.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">Do I need a unique password for every account?</button>
-                <div class="dropdown-content">
-                    <p>Yes, using unique passwords for each account helps reduce the risk if one of your accounts is compromised.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">What are the requirements for a strong password?</button>
-                <div class="dropdown-content">
-                    <p>A strong password includes a mix of letters, numbers, and symbols and should avoid easily guessable patterns.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">How often should I change my passwords?</button>
-                <div class="dropdown-content">
-                    <p>It's a good idea to change your passwords every few months, especially for sensitive accounts. Regular updates reduce the risk of unauthorized access.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">Is it safe to store passwords in a browser?</button>
-                <div class="dropdown-content">
-                    <p>While browsers offer convenience, dedicated password managers are often more secure as they provide better encryption and protection features.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">Why should I avoid using personal information in passwords?</button>
-                <div class="dropdown-content">
-                    <p>Using personal information like names or birthdays makes passwords easier to guess. Opt for random combinations instead.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">What is two-factor authentication (2FA), and should I use it?</button>
-                <div class="dropdown-content">
-                    <p>Two-factor authentication adds a second layer of security by requiring a verification code. It’s highly recommended for important accounts.</p>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropdown-btn">How can I remember complex passwords?</button>
-                <div class="dropdown-content">
-                    <p>Consider using a password manager to securely store complex passwords. Alternatively, try creating a memorable phrase and adding symbols and numbers.</p>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Advanced Encryption</h3>
+                    <p>AES-GCM 256-bit encryption for top security</p>
                 </div>
             </div>
         </div>
-
-        <!-- Saved Passwords Container (Red Box Section) -->
-        <div class="saved-passwords-container">
-            <h2>Saved Passwords</h2>
-            <form id="savePasswordForm">
-                <input type="text" id="email" placeholder="Email/Label" required>
-                <input type="text" id="savedPassword" placeholder="Password" required>
-                <button type="button" id="saveBtn">Save</button>
-            </form>
-            <div id="savedPasswordsList"></div>
-        </div>
-
-    </div>
-
-    <script src="scripts.js"></script>
+    </section>
 </body>
 </html>
