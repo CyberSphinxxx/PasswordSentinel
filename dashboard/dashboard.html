@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PasswordSentinel - Dashboard</title>
+    <link rel="stylesheet" href="/dashboard/dashboard_styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <main class="dashboard">
+        <h1 class="dashboard-title">Welcome to PasswordSentinel</h1>
+        <p class="dashboard-subtitle">Your Secure Password Management Solution</p>
+
+        <div class="dashboard-grid">
+
+            <!-- Password Management Section -->
+            <div class="dashboard-card">
+                <img src="images/manage-icon.png" alt="Manage Passwords">
+                <h2>Password Manager</h2>
+                <p>Securely store and manage your passwords</p>
+                <a href="/password_manager/password_manager_save/password_manager_save.html" class="dashboard-button">Manage Passwords</a>
+            </div>
+
+            <!-- Educational Section -->
+            <div class="dashboard-card">
+                <img src="images/learn-icon.png" alt="Learn">
+                <h2>Security Center</h2>
+                <p>Learn about password security and best practices</p>
+                <a href="/security_center/security_center.html" class="dashboard-button">Learn More</a>
+            </div>
+
+            <!-- Password Generation Section -->
+            <div class="dashboard-card">
+                <img src="images/generate-icon.png" alt="Generate Password">
+                <h2>Password Generator</h2>
+                <p>Create strong, secure passwords with our advanced generator</p>
+                <a href="/password_generator/passwordgen.html" class="dashboard-button">Generate Password</a>
+            </div>
+
+            <!-- Password Health Check -->
+            <div class="dashboard-card">
+                <img src="images/health-icon.png" alt="Password Health">
+                <h2>Password Health</h2>
+                <p>Check the strength of your existing passwords</p>
+                <a href="health-check.html" class="dashboard-button">Check Health</a>
+            </div>
+        </div>
+
+        <!-- Security Status Section -->
+        <section class="security-status">
+            <h2>Security Status</h2>
+            <div class="status-indicators">
+                <div class="status-item">
+                    <span class="status-label">Passwords Stored:</span>
+                    <span class="status-value" id="passwordCount">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Weak Passwords:</span>
+                    <span class="status-value" id="weakPasswordCount">0</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Last Backup:</span>
+                    <span class="status-value" id="lastBackup">Never</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>PasswordSentinel © 2024 | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
