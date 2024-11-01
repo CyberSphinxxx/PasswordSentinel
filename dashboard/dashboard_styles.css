@@ -31,6 +31,11 @@
     padding: 2rem;
     text-align: center;
     transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%; 
+    min-height: 300px; 
 }
 
 .dashboard-card:hover {
@@ -38,9 +43,10 @@
 }
 
 .dashboard-card img {
+    background-color: red;
     width: 64px;
     height: 64px;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
 
 .dashboard-card h2 {
