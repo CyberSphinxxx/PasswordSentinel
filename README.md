@@ -1,59 +1,82 @@
 # 🔐 PasswordSentinel: Password Generator & Manager
 
-## 🖼️ Screenshots
-![PasswordSentinel Interface](https://github.com/user-attachments/assets/02c33967-af0a-431f-9b24-0bf019af8ceb)
+A comprehensive password management solution featuring advanced generation capabilities, secure storage, and educational resources.
+
+## Hero Page
+![heropage](https://github.com/user-attachments/assets/8a55ca07-55d5-4a98-af53-5dfce055e77f)
+
+# ✨ Key Features
+
+## **Password Generator**
+- **Customizable Length:** Generate passwords from 6 to 30 characters
+- **Character Sets:** Include uppercase, lowercase, numbers, and symbols
+- **Real-time Strength Analysis:** Instant feedback on password strength
+- **Crack Time Estimation:** See how long it would take to crack your password
+- **Entropy Calculation:** Advanced security metrics for generated passwords
+
+### Password Generator Screenshot
+![passwordgen](https://github.com/user-attachments/assets/a63ff9ce-ba58-40fb-b8a0-29f7e95cc755)
+
+## **Password Manager**
+- **Secure Storage:** AES-GCM 256-bit encryption for stored passwords
+- **Local Storage:** All data stays on your device
+- **Password Organization:** Label and categorize your passwords
+- **Edit & Delete:** Full management capabilities
+- **Quick Copy:** One-click copying to clipboard
+- **View Protection:** Passwords hidden by default with show/hide toggle
+
+### **Save Password Screenshot**
+![savepassword](https://github.com/user-attachments/assets/82867252-6972-45b3-bc5c-3dd37a21aa40)
+
+### **View Password Screenshot**
+![viewpassword](https://github.com/user-attachments/assets/3afa7684-00ee-4401-a175-3cd23088f9aa)
+
+### **Edit Password Screenshot**
+![editpassword](https://github.com/user-attachments/assets/67e467d5-e523-47f4-938e-a03d03b24267)
 
 
-## ✨ Key Features
+## **Security Center**
+- **Educational Resources:** Learn about password security best practices
+- **Security Tips:** Updated guidelines for password creation
+- **Common Mistakes:** Learn what to avoid
+- **Advanced Security Tips:** Professional-grade security advice
+- **Password Myths:** Debunking common misconceptions
 
-### **Advanced Password Generation**
-- **Customizable Length:** Choose from 6 to 30 characters for your passwords.
-- **Toggle Character Sets:** Select from uppercase, lowercase, numbers, and symbols to create secure passwords tailored to your needs.
-- **Real-time Strength Evaluation:** Instantly see how strong your password is as you create it.
-- **Dynamic Visual Indicators:** Enjoy visual feedback with changing images that reflect password strength.
+### **Security Center Screenshot**
+![SecurityCenter](https://github.com/user-attachments/assets/32907289-3daa-4e63-b444-15677a303450)
 
-### **Password Management**
-- **Save with Ease:** Store passwords alongside custom labels for easy reference.
-- **Edit & Delete:** Modify or remove saved passwords as needed.
-- **Local Storage Integration:** All passwords are saved securely in your browser’s local storage.
-- **Clipboard Copying:** Easily copy passwords to your clipboard for quick access.
+
+## **Dashboard**
+- **Overview:** Quick access to all features
+- **Security Status:** Monitor your password health
+- **Quick Actions:** Generate, save, or check passwords
+- **Statistics:** Track your stored passwords and security metrics
+
+### **Dashboard Screenshot**
+![dashboard](https://github.com/user-attachments/assets/25eb25eb-21b3-4f05-9b3e-7c23544b8132)
 
 ### **User Interface**
-- **Clean & Intuitive Design:** Navigate with ease through a user-friendly interface.
-- **Interactive FAQ Section:** Get instant answers to common questions.
-- **Responsive Layout:** Enjoy a seamless experience across all devices.
-- **Visual Feedback:** Clearly see password strength with engaging visuals.
+- **Modern Design:** Clean, intuitive interface
+- **Responsive Layout:** Works on all devices
+- **Visual Feedback:** Clear indicators for actions
+- **Accessibility:** Keyboard navigation support
+- **Dark/Light Mode:** Comfortable viewing options
 
-### **Security Features**
-- **Client-side Generation:** All password generation occurs on the client side for enhanced security.
-- **No Server-side Storage:** Your passwords remain private and are not stored on any server.
-- **Secure Password Evaluation:** Strong algorithms ensure safe password assessments.
-- **Automated Strength Assessment:** Receive immediate feedback on password strength as you create.
-
-## 💡 Usage
-
-1. **Generate a Password**
-   - Adjust the length slider (6-30 characters).
-   - Select desired character types.
-   - Password generates automatically with changes.
-
-2. **Save Passwords**
-   - Enter a label/email for reference.
-   - Input or generate a password.
-   - Click 'Save' to store locally.
-
-3. **Manage Passwords**
-   - View all saved passwords.
-   - Edit existing entries.
-   - Delete unwanted passwords.
-   - Copy passwords to clipboard.
-  
 ## 🛠️ Technical Stack
-
 - HTML5
 - CSS3
 - Vanilla JavaScript
+- Web Crypto API
 - Local Storage API
+
+## 🔒 Security Features
+- AES-GCM 256-bit encryption
+- Client-side only operations
+- No server storage
+- Secure key generation
+- Protected local storage
+- Secure error handling
+
 
 ## 🤝 Contributing
 
