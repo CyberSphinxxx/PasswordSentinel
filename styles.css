@@ -1,11 +1,11 @@
 :root {
     --background-color: #000000;
     --font-color: #ffffff;
-    --container-bg-color: #10e3ff;
+    --container-bg-color: #0054a2;
     --border-color: #333333;
     --hover-color: #212121;
 }
-
+/*
 body {
     background-color: var(--background-color);
     font-family: 'PT Serif', serif;
@@ -24,3 +24,4 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+*/
