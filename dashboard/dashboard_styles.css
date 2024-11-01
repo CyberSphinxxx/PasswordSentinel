@@ -1,20 +1,48 @@
+:root {
+    --background-color: #f9f9f9;
+    --font-color: #333333;
+    --container-bg-color: #0054a2;
+    --border-color: #0054a2;
+    --hover-color: #003d75;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'PT Serif', serif;
+    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+}
+
+#welcome-subtitle{
+    font-weight: bold;
+}
+
 .dashboard {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-.dashboard-title {
+.dashboard-header {
     text-align: center;
-    color: var(--container-bg-color);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
 
-.dashboard-subtitle {
-    text-align: center;
+.dashboard-header h1 {
+    font-size: 2.5rem;
     color: var(--font-color);
-    margin-bottom: 3rem;
+}
+
+.dashboard-header span {
+    color: var(--container-bg-color);
+}
+
+.dashboard-header p {
+    color: var(--font-color);
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
 }
 
 .dashboard-grid {
@@ -25,82 +53,65 @@
 }
 
 .dashboard-card {
-    background-color: var(--background-color);
-    border: 2px solid var(--container-bg-color);
-    border-radius: 10px;
+    background-color: var(--container-bg-color);
+    border-radius: 12px;
     padding: 2rem;
-    text-align: center;
-    transition: transform 0.3s ease;
+    color: #ffffff;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    height: 90%; 
-    min-height: 300px; 
+    height: 90%;
 }
 
 .dashboard-card:hover {
-    transform: translateY(-5px);
-}
-
-.dashboard-card img {
-    background-color: red;
-    width: 64px;
-    height: 64px;
-    margin-bottom: 0rem;
+    transform: translateY(-8px);
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 .dashboard-card h2 {
-    color: var(--container-bg-color);
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.dashboard-card p {
+    font-size: 1rem;
+    margin: 1rem 0 1.5rem;
+    text-align: center;
 }
 
 .dashboard-button {
-    display: inline-block;
-    background-color: var(--container-bg-color);
+    margin-top: auto;
+    background-color: #002c55;
     color: var(--background-color);
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
-    margin-top: 1rem;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 .dashboard-button:hover {
     background-color: var(--hover-color);
-}
-
-.quick-access {
-    margin-bottom: 3rem;
-}
-
-.quick-access-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.quick-button {
-    background-color: var(--background-color);
-    color: var(--font-color);
-    border: 1px solid var(--container-bg-color);
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.quick-button:hover {
-    background-color: var(--container-bg-color);
-    color: var(--background-color);
+    color: #ffffff;
 }
 
 .security-status {
-    background-color: var(--background-color);
+    background-color: #ffffff;
     border: 2px solid var(--container-bg-color);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 2rem;
-    margin-bottom: 3rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.security-status h2 {
+    text-align: center;
+    color: var(--container-bg-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 }
 
 .status-indicators {
@@ -112,30 +123,41 @@
 
 .status-item {
     text-align: center;
+    color: var(--font-color);
 }
 
 .status-label {
+    font-size: 1rem;
     display: block;
-    color: var(--font-color);
     margin-bottom: 0.5rem;
 }
 
 .status-value {
-    display: block;
     color: var(--container-bg-color);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
 .dashboard-footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background-color: var(--background-color);
+    border-top: 1px solid #e0e0e0;
     margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.dashboard-footer a {
+    color: var(--container-bg-color);
+    text-decoration: none;
+}
+
+.dashboard-footer a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
-    .dashboar -grid {
+    .dashboard-grid {
         grid-template-columns: 1fr;
     }
 }

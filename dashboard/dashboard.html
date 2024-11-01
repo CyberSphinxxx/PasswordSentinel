@@ -5,49 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PasswordSentinel - Dashboard</title>
     <link rel="stylesheet" href="/dashboard/dashboard_styles.css">
-    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <main class="dashboard">
-        <h1 class="dashboard-title">Welcome to PasswordSentinel</h1>
-        <p class="dashboard-subtitle">Your Secure Password Management Solution</p>
+        <header class="dashboard-header">
+            <h1>Welcome to <span>PasswordSentinel</span></h1>
+            <p id="welcome-subtitle">Your Secure Password Management Solution</p>
+        </header>
 
-        <div class="dashboard-grid">
-
+        <section class="dashboard-grid">
             <!-- Password Management Section -->
             <div class="dashboard-card">
-                <img src="images/manage-icon.png" alt="Manage Passwords">
                 <h2>Password Manager</h2>
-                <p>Securely store and manage your passwords</p>
+                <p>Securely store and manage your passwords.</p>
                 <a href="/password_manager/password_manager_save/password_manager_save.html" class="dashboard-button">Manage Passwords</a>
             </div>
 
             <!-- Educational Section -->
             <div class="dashboard-card">
-                <img src="images/learn-icon.png" alt="Learn">
                 <h2>Security Center</h2>
-                <p>Learn about password security and best practices</p>
+                <p>Learn about password security and best practices.</p>
                 <a href="/security_center/security_center.html" class="dashboard-button">Learn More</a>
             </div>
 
             <!-- Password Generation Section -->
             <div class="dashboard-card">
-                <img src="images/generate-icon.png" alt="Generate Password">
                 <h2>Password Generator</h2>
-                <p>Create strong, secure passwords with our advanced generator</p>
+                <p>Create strong, secure passwords with our advanced generator.</p>
                 <a href="/password_generator/passwordgen.html" class="dashboard-button">Generate Password</a>
             </div>
 
             <!-- Password Health Check -->
             <div class="dashboard-card">
-                <img src="images/health-icon.png" alt="Password Health">
                 <h2>Password Health</h2>
-                <p>Check the strength of your existing passwords</p>
+                <p>Check the strength of your existing passwords.</p>
                 <a href="health-check.html" class="dashboard-button">Check Health</a>
             </div>
-        </div>
+        </section>
 
         <!-- Security Status Section -->
         <section class="security-status">
