@@ -89,42 +89,121 @@ function updateLength() {
 }
 
 function evaluateStrength(password) {
-    let strength = 0;
-    const checks = {
-        length: password.length >= 12,
-        uppercase: /[A-Z]/.test(password),
-        lowercase: /[a-z]/.test(password),
-        numbers: /\d/.test(password),
-        symbols: /[^A-Za-z0-9]/.test(password),
-        variety: new Set(password).size > password.length * 0.7 // Check for character variety
+    // Base entropy calculation
+    let entropy = 0;
+    let poolSize = 0;
+
+    // Character pool calculations
+    if (/[a-z]/.test(password)) poolSize += 26;
+    if (/[A-Z]/.test(password)) poolSize += 26;
+    if (/\d/.test(password)) poolSize += 10;
+    if (/[^A-Za-z0-9]/.test(password)) poolSize += 33;
+
+    entropy = Math.log2(Math.pow(poolSize, password.length));
+
+    // Penalty factors
+    const penalties = {
+        repeatingChars: /(.)\1{2,}/.test(password) ? 0.8 : 1,
+        sequential: /(abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|rst|stu|tuv|uvw|vwx|wxy|xyz|012|123|234|345|456|567|678|789)/i.test(password) ? 0.8 : 1,
+        commonWords: /(password|qwerty|letmein|welcome|123456|admin)/i.test(password) ? 0.6 : 1
     };
 
-    // Add points based on checks
-    if (checks.length) strength += 2;
-    if (checks.uppercase) strength += 1;
-    if (checks.lowercase) strength += 1;
-    if (checks.numbers) strength += 1;
-    if (checks.symbols) strength += 2;
-    if (checks.variety) strength += 1;
+    // Apply penalties
+    entropy *= Object.values(penalties).reduce((a, b) => a * b, 1);
 
+    // Calculate crack time
+    const crackTime = estimateCrackTime(entropy);
+    
+    // Determine strength rating
+    const strengthRating = getStrengthRating(entropy, password.length);
+
+    // Update UI
+    updateStrengthUI(strengthRating, crackTime);
+}
+
+function estimateCrackTime(entropy) {
+    // Modern hardware can try around 1 trillion (10^12) passwords per second
+    const guessesPerSecond = 1e12;
+    const possibleCombinations = Math.pow(2, entropy);
+    const seconds = possibleCombinations / guessesPerSecond / 2; // Divide by 2 for average case
+
+    return formatTime(seconds);
+}
+
+function formatTime(seconds) {
+    if (seconds < 1) return "Instantly";
+    if (seconds < 60) return `${Math.round(seconds)} seconds`;
+    if (seconds < 3600) return `${Math.round(seconds / 60)} minutes`;
+    if (seconds < 86400) return `${Math.round(seconds / 3600)} hours`;
+    if (seconds < 2592000) return `${Math.round(seconds / 86400)} days`;
+    if (seconds < 31536000) return `${Math.round(seconds / 2592000)} months`;
+    if (seconds < 315360000) return `${Math.round(seconds / 31536000)} years`;
+    if (seconds < 3153600000) return `${Math.round(seconds / 315360000)} decades`;
+    return "Centuries";
+}
+
+function getStrengthRating(entropy, length) {
+    // Minimum recommended entropy is 60 bits
+    if (entropy >= 100 && length >= 12) {
+        return {
+            label: 'Very Strong',
+            score: 100,
+            color: '#00cc00'
+        };
+    } else if (entropy >= 80 && length >= 10) {
+        return {
+            label: 'Strong',
+            score: 80,
+            color: '#88cc00'
+        };
+    } else if (entropy >= 60 && length >= 8) {
+        return {
+            label: 'Medium',
+            score: 60,
+            color: '#ffaa00'
+        };
+    } else if (entropy >= 40) {
+        return {
+            label: 'Weak',
+            score: 40,
+            color: '#ff7700'
+        };
+    } else {
+        return {
+            label: 'Very Weak',
+            score: 20,
+            color: '#ff4444'
+        };
+    }
+}
+
+function updateStrengthUI(strengthRating, crackTime) {
     const strengthBar = document.querySelector('.strength-bar');
     const strengthText = document.querySelector('.strength-text');
+    const crackTimeElement = document.getElementById('crackTimeEstimate');
 
-    if (strength <= 3) {
-        strengthBar.style.width = '33%';
-        strengthBar.style.backgroundColor = '#ff4444';
-        strengthText.textContent = 'Weak';
-        strengthText.style.color = '#ff4444';
-    } else if (strength <= 6) {
-        strengthBar.style.width = '66%';
-        strengthBar.style.backgroundColor = '#ffaa00';
-        strengthText.textContent = 'Medium';
-        strengthText.style.color = '#ffaa00';
+    // Update strength meter
+    strengthBar.style.width = `${strengthRating.score}%`;
+    strengthBar.style.backgroundColor = strengthRating.color;
+    strengthText.textContent = strengthRating.label;
+    strengthText.style.color = strengthRating.color;
+
+    // Update crack time
+    crackTimeElement.textContent = `Time to crack: ${crackTime}`;
+    crackTimeElement.style.color = getCrackTimeColor(crackTime);
+}
+
+function getCrackTimeColor(crackTime) {
+    if (crackTime.includes("Instantly") || crackTime.includes("seconds")) {
+        return '#ff4444';
+    } else if (crackTime.includes("minutes") || crackTime.includes("hours")) {
+        return '#ff7700';
+    } else if (crackTime.includes("days")) {
+        return '#ffaa00';
+    } else if (crackTime.includes("months")) {
+        return '#88cc00';
     } else {
-        strengthBar.style.width = '100%';
-        strengthBar.style.backgroundColor = '#00cc00';
-        strengthText.textContent = 'Strong';
-        strengthText.style.color = '#00cc00';
+        return '#00cc00';
     }
 }
 
