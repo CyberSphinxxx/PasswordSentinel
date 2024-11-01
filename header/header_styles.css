@@ -55,6 +55,7 @@ header {
     border-radius: 4px;
     transition: all 0.3s ease;
     position: relative;
+    cursor: pointer;
 }
 
 .header-nav-link:hover {
@@ -79,7 +80,8 @@ header {
 }
 
 .header-dropdown {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     background: rgba(0, 84, 162, 0.95);
     backdrop-filter: blur(10px);
@@ -88,11 +90,19 @@ header {
     z-index: 1;
     border-radius: 12px;
     overflow: hidden;
-    top: 120%;
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(10px);
     transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.1);
+    padding-top: 0.5rem;
+}
+
+.header-nav-item:hover .header-dropdown,
+.header-dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 .header-dropdown-item {
@@ -108,22 +118,6 @@ header {
     background-color: rgba(255,255,255,0.1);
     padding-left: 2rem;
     color: #ff9900;
-}
-
-.header-nav-item:hover .header-dropdown {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
 }
 
 /* Responsive Design */
