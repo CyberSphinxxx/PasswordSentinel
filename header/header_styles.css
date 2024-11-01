@@ -1,8 +1,11 @@
-
 header {
+    font-family: Arial, sans-serif;
     background-color: #0054a2;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .header-container {
