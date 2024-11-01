@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="header_styles.css">
     <style>
         :root {
-            --primary-color: #ffa500;
-            --secondary-color: #000000;
-            --text-color: #ffffff;
+            --primary-color: #0054a2;
+            --secondary-color: #ffffff;
+            --text-color: #000000;
         }
 
         body, html {
@@ -26,7 +26,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('password-bg.jpg') no-repeat center center;
             background-size: cover;
         }
 
@@ -43,7 +42,7 @@
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
         }
 
@@ -71,10 +70,14 @@
         .feature {
             text-align: center;
             flex-basis: 30%;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            border: solid 2px black;
         }
 
         .feature-icon {
             font-size: 2.5rem;
+            margin-top: 10px;
             margin-bottom: 15px;
             color: var(--primary-color);
         }
@@ -89,7 +92,7 @@
             <nav class="header-nav">
                 <ul class="header-nav-menu">
                     <li class="header-nav-item">
-                        <a href="#" class="header-nav-link">About</a>
+                        <a class="header-nav-link">About</a>
                         <div class="header-dropdown">
                             <a href="/about/why-passwordsentinel.html" class="header-dropdown-item">Why PasswordSentinel</a>
                             <a href="what-is-password-manager.html" class="header-dropdown-item">What is a Password Manager</a>

@@ -1,6 +1,6 @@
 
 header {
-    background-color: rgb(30, 30, 50);
+    background-color: #0054a2;
     padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -15,7 +15,7 @@ header {
 }
 
 .header-logo a {
-    color: var(--container-bg-color);
+    color: white;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
@@ -43,9 +43,9 @@ header {
 .header-dropdown {
     display: none;
     position: absolute;
-    background-color: black;
+    background-color: #0054a2;
     border: solid 1px;
-    min-width: 200px;
+    min-width: 15rem;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px;
