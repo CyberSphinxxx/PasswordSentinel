@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Center - PasswordSentinel</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="/security_center/security_center_styles.css">
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/header/header_styles.css">
 </head>
 <body>
-    <header>
+    <header class="sticky-header">
         <div class="header-container">
             <div class="header-logo">
                 <a href="/index.html">PasswordSentinel</a>
             </div>
             <nav class="header-nav">
                 <ul class="header-nav-menu">
-
                     <li class="header-nav-item">
                         <a class="header-nav-link">Tools</a>
                         <div class="header-dropdown">
@@ -27,101 +27,185 @@
                             <a href="#TBA" class="header-dropdown-item">Password Health</a>
                         </div>
                     </li>
-
                     <li class="header-nav-item">
                         <a href="/dashboard/dashboard.html" class="header-nav-link">Dashboard</a>
-                        <!-- TBA -->
                     </li>
-                    
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container">
-        <h2>Security Center</h2>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">What makes a password strong?</button>
-            <div class="dropdown-content">
-                <p>A strong password should be at least 12 characters long, include uppercase and lowercase letters, numbers, and symbols.</p>
-            </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <h3>Quick Navigation</h3>
+            <ul class="sidebar-nav">
+                <li><a href="#password-basics">Password Basics</a></li>
+                <li><a href="#security-tips">Security Tips</a></li>
+                <li><a href="#common-mistakes">Common Mistakes</a></li>
+                <li><a href="#advanced-tips">Advanced Security Tips</a></li>
+                <li><a href="#password-myths">Password Myths</a></li>
+                <li><a href="#tools">Security Tools</a></li>
+            </ul>
         </div>
 
-        <div class="dropdown">
-            <button class="dropdown-btn">Why should I use a password generator?</button>
-            <div class="dropdown-content">
-                <p>Using a generator helps create complex passwords, which makes it harder for hackers to guess.</p>
-            </div>
+        <div class="content">
+            <section id="password-basics">
+                <h2><i class="fas fa-shield-alt"></i> Password Security Basics</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h3>Password Strength Requirements</h3>
+                        <ul>
+                            <li>Minimum 12 characters length</li>
+                            <li>Mix of uppercase and lowercase letters</li>
+                            <li>Include numbers and special characters</li>
+                            <li>Avoid personal information</li>
+                            <li>Use unique passwords for each account</li>
+                            <li>Consider using passphrases</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Two-Factor Authentication (2FA)</h3>
+                        <p>Protect your accounts with 2FA:</p>
+                        <ul>
+                            <li>Email accounts</li>
+                            <li>Banking and financial services</li>
+                            <li>Social media accounts</li>
+                            <li>Cloud storage services</li>
+                            <li>Password managers</li>
+                            <li>Cryptocurrency wallets</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="security-tips">
+                <h2><i class="fas fa-lightbulb"></i> Security Best Practices</h2>
+                <div class="tips-container">
+                    <div class="tip-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Regular Updates</h4>
+                        <p>Update passwords every 3-6 months for optimal security</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-fingerprint"></i>
+                        <h4>Unique Passwords</h4>
+                        <p>Never reuse passwords across different accounts</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-lock"></i>
+                        <h4>Password Manager</h4>
+                        <p>Use a secure password manager to store credentials</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-user-secret"></i>
+                        <h4>Privacy Settings</h4>
+                        <p>Regularly review and update privacy settings on social media</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="common-mistakes">
+                <h2><i class="fas fa-exclamation-triangle"></i> Common Security Mistakes</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h4>❌ Using Personal Information</h4>
+                        <p>Never use birthdays, names, or personal details in passwords</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>❌ Password Sharing</h4>
+                        <p>Avoid sharing passwords through email or messages</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>❌ Simple Patterns</h4>
+                        <p>Don't use keyboard patterns or sequential numbers</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>❌ Password Reuse</h4>
+                        <p>Using the same password for multiple accounts</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>❌ Writing Passwords Down</h4>
+                        <p>Avoid writing passwords on sticky notes or in easily accessible places</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advanced-tips">
+                <h2><i class="fas fa-rocket"></i> Advanced Security Tips</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Use a Password Manager with 2FA</h4>
+                        <p>Enable two-factor authentication for your password manager</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-lock"></i>
+                        <h4>Implement a Zero-Trust Policy</h4>
+                        <p>Verify the identity of users and devices before granting access</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Regularly Update Your Operating System</h4>
+                        <p>Keep your OS up-to-date to ensure you have the latest security patches</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-firewall"></i>
+                        <h4>Use a Firewall</h4>
+                        <p>Enable the firewall on your device to block unauthorized access</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="password-myths">
+                <h2><i class="fas fa-question-circle"></i> Password Myths Debunked</h2>
+                <div class="card-grid">
+                    <div class="info-card">
+                        <h4>Myth: Passwords Need to be Changed Frequently</h4>
+                        <p>Reality: Passwords only need to be changed when compromised or every 3-6 months</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Myth: Password Managers are Insecure</h4>
+                        <p>Reality: Password managers are secure and can help protect your passwords</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Myth: Biometric Authentication is Foolproof</h4>
+                        <p>Reality: Biometric authentication can be vulnerable to spoofing attacks</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tools">
+                <h2><i class="fas fa-tools"></i> Security Tools</h2>
+                <div class="tools-grid">
+                    <a href="/password_generator/passwordgen.html" class="tool-card">
+                        <i class="fas fa-key"></i>
+                        <h4>Password Generator</h4>
+                        <p>Create strong, unique passwords instantly</p>
+                    </a>
+                    <a href="/password_manager/password_manager_save/password_manager_save.html" class="tool-card">
+                        <i class="fas fa-vault"></i>
+                        <h4>Password Manager</h4>
+                        <p>Securely store and manage your passwords</p>
+                    </a>
+                    <a href="#" class="tool-card">
+                        <i class="fas fa-heart-pulse"></i>
+                        <h4>Password Health Check</h4>
+                        <p>Analyze and improve your password strength</p>
+                    </a>
+                </div>
+            </section>
         </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">Do I need a unique password for every account?</button>
-            <div class="dropdown-content">
-                <p>Yes, using unique passwords for each account helps reduce the risk if one of your accounts is compromised.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">What are the requirements for a strong password?</button>
-            <div class="dropdown-content">
-                <p>A strong password includes a mix of letters, numbers, and symbols and should avoid easily guessable patterns.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">How often should I change my passwords?</button>
-            <div class="dropdown-content">
-                <p>It's a good idea to change your passwords every few months, especially for sensitive accounts. Regular updates reduce the risk of unauthorized access.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">Is it safe to store passwords in a browser?</button>
-            <div class="dropdown-content">
-                <p>While browsers offer convenience, dedicated password managers are often more secure as they provide better encryption and protection features.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">Why should I avoid using personal information in passwords?</button>
-            <div class="dropdown-content">
-                <p>Using personal information like names or birthdays makes passwords easier to guess. Opt for random combinations instead.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">What is two-factor authentication (2FA), and should I use it?</button>
-            <div class="dropdown-content">
-                <p>Two-factor authentication adds a second layer of security by requiring a verification code. It’s highly recommended for important accounts.</p>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropdown-btn">How can I remember complex passwords?</button>
-            <div class="dropdown-content">
-                <p>Consider using a password manager to securely store complex passwords. Alternatively, try creating a memorable phrase and adding symbols and numbers.</p>
-            </div>
-        </div>
-
-        <h2>Security Tips</h2>
-        <!-- Add security tips content here -->
-
-        <h2>Common Mistakes</h2>
-        <!-- Add common mistakes content here -->
-
     </div>
 
     <script>
-        // Add JavaScript code to toggle dropdowns
-        const dropdowns = document.querySelectorAll('.dropdown');
-
-        dropdowns.forEach((dropdown) => {
-            const dropdownBtn = dropdown.querySelector('.dropdown-btn');
-            const dropdownContent = dropdown.querySelector('.dropdown-content');
-
-            dropdownBtn.addEventListener('click', () => {
-                dropdown.classList.toggle('active');
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
