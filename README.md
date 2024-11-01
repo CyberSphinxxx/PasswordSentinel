@@ -94,7 +94,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🔗 Links
 
-- [Live Demo](https://cybersphinxxx.github.io/PasswordSentinel/)
+- [Live Demo](https://password-sentinel.vercel.app)
 - [Report Bug](https://github.com/CyberSphinxxx/PasswordSentinel/issues)
 - [Request Feature](https://github.com/CyberSphinxxx/PasswordSentinel/issues)
 
