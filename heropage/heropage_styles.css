@@ -1,70 +1,81 @@
-
-header {
-    background-color: #0054a2;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-
-.header-logo a {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.header-nav-menu {
-    list-style-type: none;
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'PT Serif', serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hero {
+    height: 60vh;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    padding: 0 20px;
 }
 
-.header-nav-item {
-    position: relative;
-    margin-left: 2rem;
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #0054a2;
 }
 
-.header-nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.5rem 0;
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 800px;
 }
 
-.header-dropdown {
-    display: none;
-    position: absolute;
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
     background-color: #0054a2;
-    border: solid 1px;
-    min-width: 15rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff8c00;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 50px 0;
+}
+
+@media(min-width: 768px) {
+    .features {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.feature {
+    text-align: center;
+    padding: 20px;
+    background-color: #0054a2;
+    color: #ffffff;
     border-radius: 10px;
-    overflow: hidden;
-    top: 100%;
-    left: 0;
+    max-width: 300px;
 }
 
-.header-dropdown-item {
-    color: white !important;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.header-dropdown-item:hover {
-    background-color: gray;
-}
-
-.header-nav-item:hover .header-dropdown {
-    display: block;
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
