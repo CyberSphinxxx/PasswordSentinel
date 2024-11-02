@@ -5,81 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PasswordSentinel - Secure Password Generator & Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/heropage/heropage_styles.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="header/header_styles.css">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            font-family: 'PT Serif', serif;
-            background-color: rgb(255, 255, 255);
-            color: rgb(0, 0, 0);
-        }
-
-        .hero {
-            height: 87vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            color: #0054a2;
-        }
-
-        p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #0054a2;
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: rgb(255, 140, 0);
-        }
-
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 50px;
-        }
-
-        .feature {
-            text-align: center;
-            flex-basis: 30%;
-            background-color: #0054a2;
-            border-radius: 10px;
-            border: solid 2px black;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            color: rgb(34, 34, 255);
-        }
-    </style>
+    <link rel="stylesheet" href="heropage/heropage_styles.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="header-container">
             <div class="header-logo">
@@ -96,10 +27,8 @@
                             <a href="security.html" class="header-dropdown-item">Security</a>
                         </div>
                     </li>
-
                     <li class="header-nav-item">
-                        <a href="https://github.com/CyberSphinxxx/PasswordSentinel" class="header-nav-link">Github Repository</a>
-                        <!-- TBA -->
+                        <a href="https://github.com/CyberSphinxxx/PasswordSentinel" class="header-nav-link">GitHub Repository</a>
                     </li>
                 </ul>
             </nav>
@@ -112,24 +41,24 @@
             <p>Your trusted companion for generating and managing secure passwords locally.</p>
             <p>Protect your digital life with advanced encryption, intuitive tools, and the peace of mind that comes with complete privacy - your data never leaves your device.</p>
             <a href="dashboard/dashboard.html" class="cta-button">Get Started</a>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Secure Generation</h3>
-                    <p>Create strong, unique passwords instantly</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">💼</div>
-                    <h3>Easy Management</h3>
-                    <p>Store and organize your passwords safely</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Advanced Encryption</h3>
-                    <p>AES-GCM 256-bit encryption for top security</p>
-                </div>
-            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <div class="feature-icon" aria-label="Lock Icon">🔒</div>
+            <h3>Secure Generation</h3>
+            <p>Create strong, unique passwords instantly.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon" aria-label="Briefcase Icon">💼</div>
+            <h3>Easy Management</h3>
+            <p>Store and organize your passwords safely.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon" aria-label="Shield Icon">🛡️</div>
+            <h3>Advanced Encryption</h3>
+            <p>AES-GCM 256-bit encryption for top security.</p>
         </div>
     </section>
 </body>
