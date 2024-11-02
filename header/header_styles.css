@@ -107,7 +107,7 @@ header {
 
 .header-dropdown-item {
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
     text-decoration: none;
     display: block;
     transition: all 0.2s ease;
