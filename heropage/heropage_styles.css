@@ -112,7 +112,7 @@ a {
 }
 
 .feature-highlight {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     padding: 60px 0;
     text-align: center;
 }
@@ -133,7 +133,7 @@ a {
 }
 
 .feature-item {
-    background-color: #ffffff;
+    background-color: #0054a22a;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -141,7 +141,7 @@ a {
 }
 
 .feature-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-25px);
 }
 
 .feature-item i {
