@@ -16,13 +16,15 @@ a {
 }
 
 .hero {
-    height: 60vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-between;
+    padding: 60px 85px;
     background-size: cover;
-    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 600px;
 }
 
 .hero-content h1 {
@@ -34,7 +36,6 @@ a {
 .hero-content p {
     font-size: 1.3rem;
     margin-bottom: 30px;
-    max-width: 800px;
 }
 
 .cta-button {
@@ -49,6 +50,13 @@ a {
 
 .cta-button:hover {
     background-color: #ff8c00;
+}
+
+.hero-image img {
+    max-width: 80%;
+    height: auto;
+    margin-left: 10rem;
+    border-radius: 20px;
 }
 
 .features {
