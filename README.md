@@ -3,7 +3,7 @@
 A comprehensive password management solution featuring advanced generation capabilities, secure storage, and educational resources.
 
 ## Hero Page
-![heropage](https://github.com/user-attachments/assets/8a55ca07-55d5-4a98-af53-5dfce055e77f)
+![heropage-update-nov4](https://github.com/user-attachments/assets/d1e3cb96-2d44-4c6c-b326-50c93a95dbb9)
 
 # ✨ Key Features
 
