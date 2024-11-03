@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Health Checker - PasswordSentinel</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/header/header_styles.css">
+    <link rel="stylesheet" href="/password_health_check/passhealth_checker_styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="/index.html">PasswordSentinel</a>
+            </div>
+            <nav class="header-nav">
+                <ul class="header-nav-menu">
+                    <li class="header-nav-item">
+                        <a class="header-nav-link">Tools</a>
+                        <div class="header-dropdown">
+                            <a href="/password_manager/password_manager_save/password_manager_save.html" class="header-dropdown-item">Password Manager</a>
+                            <a href="/security_center/security_center.html" class="header-dropdown-item">Security Center</a>
+                            <a href="/password_generator/passwordgen.html" class="header-dropdown-item">Password Generator</a>
+                            <a href="password_health.html" class="header-dropdown-item">Password Health</a>
+                        </div>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="/dashboard/dashboard.html" class="header-nav-link">Dashboard</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="health-checker-container">
+        <h1>Password Health Checker</h1>
+        <p id="desc">Quickly evaluate your password’s strength and get tips to enhance its security.</p>
+        
+        <div class="password-input-section">
+            <div class="password-input-container">
+                <div class="password-field">
+                    <input type="password" id="passwordInput" placeholder="Enter your password to check its strength">
+                    <button type="button" id="togglePassword" class="toggle-password" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <button id="checkButton">Check Health</button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="result-card">
+                <h3>Password Strength</h3>
+                <div class="strength-meter">
+                    <div class="strength-bar"></div>
+                </div>
+                <p id="strengthText">Not checked yet</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Time to Crack</h3>
+                <p id="crackTime">Not checked yet</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Security Score</h3>
+                <p id="securityScore">Not checked yet</p>
+                <ul class="feedback-list" id="feedbackList"></ul>
+            </div>
+        </div>
+
+        <div class="suggestions-section">
+            <h2>Improvement Suggestions</h2>
+            <ul class="suggestions-list" id="suggestionsList">
+                <li>Enter a password above to receive personalized suggestions</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/password_health_check/passhealth_checker_scripts.js"></script>
+</body>
+</html>
