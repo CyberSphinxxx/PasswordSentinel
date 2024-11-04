@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies - PasswordSentinel</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/policies/policies-styles.css">
+    <style>
+        .policy-card {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .policy-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 1.5rem;
+        }
+
+        .policy-content {
+            flex-grow: 1;
+        }
+
+        .policy-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-description {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .policy-link {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .policy-link:hover {
+            background-color: #003d7a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-nav">
+                <a href="/index.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+            </div>
+            <div class="header-logo">
+                <a href="/index.html">PasswordSentinel</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>PasswordSentinel Policies</h1>
+
+        <div class="policy-card">
+            <div class="policy-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="policy-content">
+                <h2 class="policy-title">Privacy Policy</h2>
+                <p class="policy-description">Learn about how we handle and protect your personal information.</p>
+                <a href="/policies/privacy-policy/privacy-policy.html" class="policy-link">Read Privacy Policy</a>
+            </div>
+        </div>
+
+        <div class="policy-card">
+            <div class="policy-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <div class="policy-content">
+                <h2 class="policy-title">Security Policy</h2>
+                <p class="policy-description">Understand our commitment to keeping your data secure.</p>
+                <a href="/policies/security-policies/security-policy.html" class="policy-link">Read Security Policy</a>
+            </div>
+        </div>
+
+        <div class="policy-card">
+            <div class="policy-icon">
+                <i class="fas fa-file-contract"></i>
+            </div>
+            <div class="policy-content">
+                <h2 class="policy-title">Terms of Service</h2>
+                <p class="policy-description">Review the terms and conditions for using PasswordSentinel.</p>
+                <a href="/policies/terms-of-service/terms-of-service.html" class="policy-link">Read Terms of Service</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
