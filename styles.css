@@ -5,6 +5,21 @@
     --border-color: #333333;
     --hover-color: #002c55;
 }
-/*
 
-*/
+.dashboard-footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--background-color);
+    border-top: 1px solid #e0e0e0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.dashboard-footer a {
+    color: var(--container-bg-color);
+    text-decoration: none;
+}
+
+.dashboard-footer a:hover {
+    text-decoration: underline;
+}
