@@ -6,7 +6,9 @@
     <title>PasswordSentinel - Dashboard</title>
     <link rel="stylesheet" href="/dashboard/dashboard_styles.css">
     <link rel="stylesheet" href="/header/header_styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     
@@ -42,56 +44,68 @@
             <p id="welcome-subtitle">Your Password Management Solution</p>
         </div>
 
-        <section class="dashboard-grid">
-            <!-- Password Management Section -->
-            <div class="dashboard-card">
-                <h2>Password Manager</h2>
-                <p>Securely store and manage your passwords.</p>
-                <a href="/password_manager/password_manager_save/password_manager_save.html" class="dashboard-button">Manage Passwords</a>
-            </div>
+        <div class="dashboard-layout">
+            <aside class="dashboard-sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+                        <li><a href="/password_manager/password_manager_save/password_manager_save.html"><i class="fas fa-lock"></i>Password Manager</a></li>
+                        <li><a href="/security_center/security_center.html"><i class="fas fa-shield-alt"></i>Security Center</a></li>
+                        <li><a href="/password_generator/passwordgen.html"><i class="fas fa-key"></i>Password Generator</a></li>
+                        <li><a href="/password_health_check/passhealth_checker.html"><i class="fas fa-heartbeat"></i>Password Health</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-            <!-- Educational Section -->
-            <div class="dashboard-card">
-                <h2>Security Center</h2>
-                <p>Learn about password security and best practices.</p>
-                <a href="/security_center/security_center.html" class="dashboard-button">Learn More</a>
-            </div>
-
-            <!-- Password Generation Section -->
-            <div class="dashboard-card">
-                <h2>Password Generator</h2>
-                <p>Create strong, secure passwords with our advanced generator.</p>
-                <a href="/password_generator/passwordgen.html" class="dashboard-button">Generate Password</a>
-            </div>
-
-            <!-- Password Health Check -->
-            <div class="dashboard-card">
-                <h2>Password Health</h2>
-                <p>Check the strength of your existing passwords.</p>
-                <a href="/password_health_check/passhealth_checker.html" class="dashboard-button">Check Health</a>
-            </div>
-        </section>
-
-        <br>
-
-        <!-- Security Status Section -->
-        <section class="security-status">
-            <h2>Security Status</h2>
-            <div class="status-indicators">
-                <div class="status-item">
-                    <span class="status-label">Passwords Stored:</span>
-                    <span class="status-value" id="passwordCount">0</span>
+            <section class="dashboard-main">
+                <div class="dashboard-summary">
+                    <div class="summary-card">
+                        <h3>Total Passwords</h3>
+                        <p class="summary-number" id="passwordCount">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Weak Passwords</h3>
+                        <p class="summary-number" id="weakPasswordCount">0</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Password Strength</h3>
+                        <p class="summary-number" id="avgPasswordStrength">0%</p>
+                    </div>
+                    <div class="summary-card">
+                        <h3>Last Backup</h3>
+                        <p class="summary-text" id="lastBackup">Never</p>
+                    </div>
                 </div>
-                <div class="status-item">
-                    <span class="status-label">Weak Passwords:</span>
-                    <span class="status-value" id="weakPasswordCount">0</span>
+
+                <div class="dashboard-charts">
+                    <div class="chart-container">
+                        <h3>Password Strength Distribution</h3>
+                        <canvas id="strengthChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Password Age</h3>
+                        <canvas id="ageChart"></canvas>
+                    </div>
                 </div>
-                <div class="status-item">
-                    <span class="status-label">Last Backup:</span>
-                    <span class="status-value" id="lastBackup">Never</span>
+
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <a href="/password_manager/password_manager_save/password_manager_save.html" class="action-button">Add New Password</a>
+                        <a href="/password_generator/passwordgen.html" class="action-button">Generate Password</a>
+                        <a href="/password_health_check/passhealth_checker.html" class="action-button">Run Health Check</a>
+                        <a href="#" class="action-button">Backup Passwords</a>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <div class="recent-activity">
+                    <h3>Recent Activity</h3>
+                    <ul id="activityList">
+                        <!-- Activity items will be dynamically added here -->
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="dashboard-footer">
@@ -102,5 +116,39 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Sample chart data (replace with real data in your implementation)
+        const strengthCtx = document.getElementById('strengthChart').getContext('2d');
+        new Chart(strengthCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Strong', 'Medium', 'Weak'],
+                datasets: [{
+                    data: [65, 25, 10],
+                    backgroundColor: ['#4CAF50', '#FFC107', '#F44336']
+                }]
+            }
+        });
+
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['0-3 months', '3-6 months', '6-12 months', '1+ year'],
+                datasets: [{
+                    label: 'Password Age',
+                    data: [30, 25, 20, 15],
+                    backgroundColor: '#2196F3'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
