@@ -3,7 +3,6 @@ header {
     background: linear-gradient(135deg, #0054a2 0%, #003366 100%);
     padding: 1.2rem 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
