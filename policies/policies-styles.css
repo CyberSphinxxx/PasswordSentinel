@@ -47,6 +47,7 @@ header {
     transition: all 0.3s ease;
     font-size: 1rem;
     background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
 }
 
 .back-button:hover {
@@ -56,6 +57,7 @@ header {
 
 .back-button i {
     font-size: 0.9rem;
+    user-select: none;
 }
 
 .header-logo {
