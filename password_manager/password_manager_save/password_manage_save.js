@@ -56,10 +56,20 @@ async function encryptData(data) {
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
+    const password = passwordInput.value; // Get the password input value
+    const strength = evaluatePasswordStrength(password); // Evaluate password strength
+
+    // Only save if the password is strong enough
+    if (strength === 'Weak') {
+        errorMessage.textContent = 'Password is too weak. Please choose a stronger password.';
+        errorMessage.style.display = 'block';
+        return;
+    }
+
     const passwordData = {
         label: document.getElementById('label').value,
         username: document.getElementById('username').value,
-        password: document.getElementById('password').value,
+        password: password,
         dateAdded: new Date().toISOString()
     };
 
@@ -91,7 +101,7 @@ form.addEventListener('submit', async function(e) {
         errorMessage.style.display   = 'none';
         setTimeout(() => {
             clearForm();
-        }, 2000)
+        }, 2000);
     } catch (error) {
         errorMessage.textContent     = 'Error saving password: ' + error.message;
         errorMessage.style.display   = 'block';
@@ -99,11 +109,9 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// Clear form function
-function clearForm() {
+// Clear form function clearForm() {
     document.getElementById('label').value    = '';
     document.getElementById('username').value = '';
     document.getElementById('password').value = '';
     strengthIndicator.textContent = '';
     errorMessage.style.display    = 'none';
-}
