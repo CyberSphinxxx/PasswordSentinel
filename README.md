@@ -2,6 +2,9 @@
 
 A comprehensive password management solution featuring advanced generation capabilities, secure storage, and educational resources.
 
+## Note
+This project is currently a work in progress, so you may encounter some bugs. Your feedback is highly appreciated as I continue to improve it!
+
 ## Hero Page
 ![heropage-update-nov4](https://github.com/user-attachments/assets/d1e3cb96-2d44-4c6c-b326-50c93a95dbb9)
 
